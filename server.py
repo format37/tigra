@@ -4,16 +4,16 @@ import datetime
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def log_request():
-    print('request.data')
+    print(request.args)
     # use the current timestamp to create a unique filename for each request
     timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')
     filename = os.path.join('logs', f'request_{timestamp}.log')
 
     # save the request data to the file
     with open(filename, 'w') as f:
-        f.write(str(request.data))
+        f.write(str(request.args))
 
     return 'Request logged successfully.\n'
 

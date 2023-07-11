@@ -15,18 +15,14 @@ def main():
 
     # Define some test data
     test_data = {
-        '$i': 'incomers',
-        '$o': 'outgoers',
-        '$n': 'attendees',
-        '$s': 'counter serial no.',
-        '$c': 'card ID',
-        '$k': 'card shift start and finish',
-        '$d': 'UTC time in sec',
-        '$m': 'MD5 hash of summary line with signature added'
+        'str': '$i_$o_$s_$m',
+        'card': '$c',
+        'date': '$d',
+        'md5': '$m'
     }
 
-    # Send a POST request to the server
-    response = requests.post(url, json=test_data)
+    # Send a GET request to the server
+    response = requests.get(url, params=test_data)
 
     # Print the server's response
     print(response.text)
