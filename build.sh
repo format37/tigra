@@ -1,1 +1,1 @@
-docker build -t flask-server:latest .
+sudo docker build -t tigra-server:latest .
