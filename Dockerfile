@@ -11,7 +11,7 @@ ADD . /app
 RUN pip install --no-cache-dir flask
 
 # Make port 6000 available to the world outside this container
-EXPOSE 6000
+# EXPOSE 6000
 
 # Run server.py when the container launches
 CMD ["python", "server.py"]
