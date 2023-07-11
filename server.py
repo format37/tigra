@@ -4,11 +4,12 @@ import datetime
 
 app = Flask(__name__)
 
-# @app.route('/', methods=['GET'])
-# def log_request():
-@app.route('/', defaults={'path': ''}, methods=['GET'])
-@app.route('/<path:path>', methods=['GET'])
-def log_request(path):
+# @app.route('/', defaults={'path': ''}, methods=['GET'])
+# @app.route('/<path:path>', methods=['GET'])
+# def log_request(path):
+# ?dt=$d&in=$i&out=$o&at=$n&dv=$s
+@app.route('/', methods=['GET'])
+def log_request():
     print(request.args)
     # use the current timestamp to create a unique filename for each request
     timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')
