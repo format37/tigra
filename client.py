@@ -2,7 +2,7 @@ import requests
 import datetime
 
 # Replace with your Flask server's URL
-url = 'http://localhost:6000'
+url = 'http://10.2.4.164:6000'
 
 # Define some test data
 test_data = {
